@@ -18,7 +18,7 @@ jobs:
       run: mvn test
 
     - name: Checkstyle
-      run: mvn checkstyle:checkstyel
+      run: mvn checkstyle:checkstyle
     
       #setup java 11
     - name: Set java 11
@@ -43,7 +43,7 @@ jobs:
           -Dsonar.jacoco.reportsPath=target/jacoco.exec 
           -Dsonar.java.checkstyle.reportPaths=target/checkstyle-result.xml
 
-          
+
     - name: SonarQube Guality Gate check
       id: sonarqube-quality-gate-check
       uses: sonarsource/sonarqube-quality-gate-action@master
